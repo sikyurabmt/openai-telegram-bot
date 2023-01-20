@@ -24,12 +24,21 @@ const myText =
 
 (async () => {
   try {
+    var http = require("http");
+    http
+      .createServer(function (req, res) {
+        console.log(`Just got a request at ${req.url}!`);
+        res.write("Yo!");
+        res.end();
+      })
+      .listen(process.env.PORT || 3000);
+
     // Catching a message from the chat
     bot.on("message", async (msg) => {
       const text = msg.text;
       const chatId = msg.chat.id;
       console.log(msg.text);
-      // Process the "/start" command and send brief information to the chat
+      // // Process the "/start" command and send brief information to the chat
       if (text === "/start") {
         myMessage = myText;
         await bot.sendMessage(

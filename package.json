@@ -1,10 +1,11 @@
 {
-  "name": "chatgpt-tele-bot2",
+  "name": "openai-telegram-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
